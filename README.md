@@ -24,4 +24,29 @@ Generally Django can have multiple apps within the same project.
 
 `python manage.py startapp blog`
 
-This creates a blog
+This creates a blog. 
+
+To include routes from a sub-project we need to import the include from django.urls, and include it like this: 
+
+`path('blog/',  include('blog.urls'))`
+
+We need to make a folder within the templates folder with the same name as the current app to let Django know these are for the correct app. 
+
+We need to add the Blog in settings.py to the list of installed apps
+
+To use a template that we can extend, do this:
+
+`{% block content %}{% endblock %}`
+
+Then in the file, do 
+
+`{% extends "blog/base.html" %}`
+
+then... 
+
+```
+  {% block content %}
+  {% endblock content %}
+```
+
+We keep static files in a folder called 'static/PROJECT_NAME'
