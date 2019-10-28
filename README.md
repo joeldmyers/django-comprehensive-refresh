@@ -50,3 +50,13 @@ then...
 ```
 
 We keep static files in a folder called 'static/PROJECT_NAME'
+
+To make a super user, do: 
+
+`python manage.py createsuperuser`
+
+To apply migrations:
+
+`python manage.py migrate`
+
+(my user is Joel)
